@@ -1,0 +1,27 @@
+%header
+  %nav.top-bar.sticky
+    %ul.title-area
+      / Title Area
+      %li.name
+        .logo
+          = link_to image_tag("logo.png"), root_path
+      %li.toggle-topbar.menu-icon
+        %a{href: "http://foundation.zurb.com/page-templates4/realty.html#"}
+          %span menu
+    %section.top-bar-section
+      / Right Nav Section
+      %ul.left
+        %li
+        - get_categories.each do|category|
+          %li
+            = link_to category.name.titleize, category_path(category)
+        %li
+          = link_to 'Booster Club Membership', root_path
+      %ul.right
+        %li
+          = link_to '  (0)', root_path, class: "fi-shopping-cart"
+        %li
+          = link_to '  Sign In', root_path, class: "fi-torso"
+  %nav.top-bar.sub
+    %section.top-bar-section
+      / Right Nav Section

@@ -1,0 +1,27 @@
+= simple_form_for [:admin, @product] do |f|
+  = f.error_notification
+
+  %fieldset
+    %legend Product Info
+    .form-inputs
+      .row
+        .large-6.columns
+          = f.input :name
+          = f.input :permalink
+          = f.input :description
+          = f.input :is_customizable
+          = f.input :active
+          = f.input :featured
+          = f.input :image, :label => "Upload Image"
+          / = f.input :available_on
+        .large-6.columns
+          = f.input :sku
+          = f.input :price
+          = f.input :cost
+          = f.association :categories, as: :check_boxes
+          = f.error :base
+  .form-actions
+    .row
+      .large-6.columns
+        = link_to '  Back', admin_products_path, class: "button fi-arrow-left"
+        = f.button :submit

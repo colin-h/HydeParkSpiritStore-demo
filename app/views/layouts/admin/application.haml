@@ -1,0 +1,24 @@
+!!!
+- conditional_html
+
+%html
+  %head
+    %title= Rails.application.class.parent_name.titleize
+    %meta{name: "HandheldFriendly", content: "True"}
+    %meta{name: "MobileOptimized", content: "320"}
+    %meta{name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0"}
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+    = favicon_link_tag 'favicon.png'
+  %body
+    = render 'layouts/admin/navigation'
+    #content-wrap
+      = render 'layouts/admin/messages'
+      .row#content
+        .twelve.columns
+          = yield
+      = render 'layouts/shared/footer'
+    = javascript_include_tag :admin
+    = javascript_include_tag :modernizr
+    = content_for :javascripts
+    = render 'layouts/admin/javascripts'

@@ -1,0 +1,39 @@
+.row
+  .large-9.columns
+    %h1 All Products
+.row
+  .large-9.columns
+    %table
+      %tr
+        %th
+        %th Name
+        %th Price
+
+        %th= 'Product Type'
+        %th Featured
+        %th Active
+        %th
+
+      - @products.each do |product|
+        %tr
+          %td
+            .th
+              = link_to image_tag(product.image.url(:mini)), admin_product_url(product)
+          %td= link_to product.name, admin_product_url(product)
+          %td= product.price
+          %td
+          %td
+            - if product.featured
+              = link_to '', edit_admin_product_path(product), class: "fi-star"
+          %td
+            - if product.active
+              = link_to '', edit_admin_product_path(product), class: "fi-check"
+            - else
+              = link_to '', edit_admin_product_path(product), class: "fi-x"
+          %td= link_to '', edit_admin_product_path(product), class: "fi-pencil"
+          %td= link_to '', admin_product_url(product), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "fi-trash"
+    = will_paginate @products
+
+  .large-3.columns
+    = render 'admin/shared/sidenav'
+    = link_to '  New Product', new_admin_product_path, class: "button fi-plus admin"

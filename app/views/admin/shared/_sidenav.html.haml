@@ -1,0 +1,16 @@
+.section-container.vertical-nav{"data-section" => "vertical-nav", "data-section-resized" => "true", style: "width: 88px;"}
+  %section.section{style: "margin-top: 0px;"}
+    %p.title{style: "width: 165px;"}
+      = link_to 'Products', admin_products_path
+
+  %section.section{style: "margin-top: -1px;"}
+    %p.title{style: "width: 165px;"}
+      = link_to 'Product Options', admin_categories_path
+
+  %section.section{style: "margin-top: -1px;"}
+    %p.title{style: "width: 165px;"}
+      = link_to 'Product Types', admin_categories_path
+
+  %section.section{style: "margin-top: -1px;"}
+    %p.title{style: "width: 165px;"}
+      = link_to ' Product Categories', admin_categories_path, class: "fi-list-bullet"

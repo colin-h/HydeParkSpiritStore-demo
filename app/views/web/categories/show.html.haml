@@ -1,0 +1,11 @@
+%p#notice
+  = notice
+
+%h1
+  = @category.name.titleize
+
+%p
+  %ul
+  - @products.each do |product|
+    %li
+      = link_to product.name.titleize, category_product_path(@category, product)

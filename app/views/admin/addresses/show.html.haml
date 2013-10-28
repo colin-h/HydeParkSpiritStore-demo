@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @address.first_name
+%p
+  %b Last name:
+  = @address.last_name
+%p
+  %b Address:
+  = @address.address
+%p
+  %b City:
+  = @address.city
+%p
+  %b State:
+  = @address.state
+%p
+  %b Zip code:
+  = @address.zip_code
+%p
+  %b Phone number:
+  = @address.phone_number
+%p
+  %b Alternative phone:
+  = @address.alternative_phone
+%p
+  %b Default:
+  = @address.default
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path

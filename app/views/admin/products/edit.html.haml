@@ -1,0 +1,10 @@
+.row
+  .large-9.columns
+    %h1
+      = @product.name
+.row
+  .large-9.columns
+    = render 'form'
+  .large-3.columns
+    = render 'admin/shared/sidenav'
+    = link_to '  New Product', new_admin_product_path, class: "button fi-plus admin"

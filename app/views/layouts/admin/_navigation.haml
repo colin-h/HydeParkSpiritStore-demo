@@ -1,0 +1,31 @@
+%header
+  %nav.top-bar.sticky
+    %ul.title-area
+      / Title Area
+      %li.name
+        .logo
+          = link_to image_tag("logo.png"), root_path
+      %li.toggle-topbar.menu-icon
+        %a{href: "http://foundation.zurb.com/page-templates4/realty.html#"}
+          %span menu
+    %section.top-bar-section
+      / Right Nav Section
+      %ul.left
+        %li
+          = link_to '  Orders', admin_products_path, class: "fi-credit-card"
+        %li
+          = link_to '  Products', admin_products_path, class: "fi-shopping-cart"
+        %li
+          = link_to '  Reports', admin_products_path, class: "fi-graph-bar"
+        %li
+          = link_to '  Users', admin_categories_path, class: "fi-torsos-all"
+        %li
+          = link_to '  Settings', admin_categories_path, class: "fi-widget"
+      %ul.right
+        %li
+          = link_to '  Spirit Store', root_path, class: "fi-home"
+        %li
+          = link_to '  Sign In', root_path, class: "fi-torso"
+  %nav.top-bar.sub
+    %section.top-bar-section
+      / Right Nav Section
